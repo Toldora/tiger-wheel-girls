@@ -1,0 +1,86 @@
+@use 'sass:color';
+@import '@/styles/colors';
+
+:root,
+::before,
+::after {
+  // Primary colors
+  --col-black-chestnut-oak: #{$col-black-chestnut-oak};
+
+  // Z-indexes
+  --z-modal-overlay: 14;
+  --z-modal: 9;
+  --z-wheel-btn: 5;
+  --z-common-decor: 4;
+  --z-wheel: 3;
+  --z-bottom-decor: 2;
+  --z-tiger-decor: 1;
+  --z-default: 1;
+  --z-hidden: -1;
+
+  // Text variables
+  /* stylelint-disable max-line-length */
+  --primary-font-family: 'Open Sans', -apple-system, 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
+    sans-serif;
+  --secondary-font-family: 'Ubuntu', -apple-system, 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
+    sans-serif;
+  /* stylelint-enable max-line-length */
+
+  --p-size: #{to-rem(14)};
+
+  @include respond-above(tablet) {
+    --p-size: #{to-rem(18)};
+  }
+
+  // Base
+  --container-max-width: 100%;
+  --container-side-padding: #{to-rem(20)};
+  --primary-text-color: var(--col-total-white);
+
+  @include respond-above(medium) {
+    --container-max-width: #{to-rem(1100)};
+    --container-side-padding: #{to-rem(40)};
+  }
+
+  @include respond-above(xmedium) {
+    --container-max-width: #{to-rem(1180)};
+  }
+
+  @include respond-above(large) {
+    --container-max-width: #{to-rem(1620)};
+    --container-side-padding: #{to-rem(50)};
+  }
+
+  // App overlay
+  --app-overlay-bg: rgba(var(--col-dark-tone-ink-rgb), 45%);
+
+  // Sign up form
+  --sign-up-form-input-bg: var(--col-black-chestnut-oak);
+
+  @include respond-above(small) {
+    --sign-up-form-input-bg: var(--col-black-chestnut-oak);
+  }
+
+  // Wheel
+  @media (orientation: portrait) {
+    --wheel-size-portrait: #{min(90vw, vh(55))};
+
+    @include respond-above(tablet) {
+      --wheel-size-portrait: #{min(85vw, vh(62))};
+    }
+  }
+
+  @media (orientation: landscape) {
+    --wheel-size-landscape: #{min(52vw, vh(66))};
+
+    @include respond-above(medium) {
+      --wheel-size-landscape: #{min(52vw, vh(63))};
+    }
+
+    @include respond-above(xmedium) {
+      --wheel-size-landscape: #{min(46vw, vh(63))};
+    }
+  }
+}
