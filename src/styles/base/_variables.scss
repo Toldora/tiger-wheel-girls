@@ -67,7 +67,7 @@
 
   // Wheel
   @media (orientation: portrait) {
-    --wheel-size-portrait: #{min(90vw, vh(55))};
+    --wheel-size-portrait: #{min(100vw, vh(60))};
 
     @include respond-above(tablet) {
       --wheel-size-portrait: #{min(85vw, vh(62))};

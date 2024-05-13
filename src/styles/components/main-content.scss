@@ -31,13 +31,24 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: vh(8.6);
   aspect-ratio: 6.7;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @include bg-image('/img/decor/logo-wrapper');
+
+  @media (orientation: portrait) {
+    height: to-rem(48);
+
+    @include respond-above(small) {
+      height: vh(6.6);
+    }
+  }
+
+  @media (orientation: landscape) {
+    height: vh(8.6);
+  }
 }
 
 .main__logo-link {
@@ -51,10 +62,19 @@
 
 .main__wheel-wrapper {
   position: relative;
+
+  @media (orientation: portrait) {
+    width: 110%;
+    max-width: var(--wheel-size-portrait);
+    margin-bottom: vh(10);
+
+    @include respond-above(small) {
+      margin-bottom: vh(6);
+    }
+  }
 }
 
 .main__wheel-neon-frame {
-  height: 158%;
   aspect-ratio: 1.667;
   position: absolute;
   z-index: var(--z-bottom-decor);
@@ -64,6 +84,14 @@
   user-select: none;
 
   @include bg-image('/img/wheel/neon-frame');
+
+  @media (orientation: portrait) {
+    height: 172%;
+  }
+
+  @media (orientation: landscape) {
+    height: 158%;
+  }
 }
 
 .main__cta-btn {
@@ -107,9 +135,9 @@
   }
 
   @media (orientation: portrait) {
-    max-width: calc(var(--wheel-size-portrait) * 0.85);
+    max-width: min(var(--wheel-size-portrait) * 0.85, to-rem(536));
 
-    @include respond-above(tablet) {
+    @include respond-above(small) {
       height: vh(6);
       font-size: min(vh(5), to-rem(44));
     }
@@ -173,21 +201,23 @@
 
   position: absolute;
   z-index: var(--z-girl-decor);
+  bottom: 0;
   aspect-ratio: var(--aspect-ratio);
   user-select: none;
 
   @include bg-image('/img/decor/girl-1');
 
   @media (orientation: portrait) {
-    right: 10%;
-    bottom: 0;
-    width: min(76vw, vh(64) * var(--aspect-ratio));
-    transform: translateX(50%);
+    right: calc(50% + var(--wheel-size-portrait) * 0.1);
+    height: vh(48);
+
+    @include respond-above(small) {
+      height: vh(65);
+    }
   }
 
   @media (orientation: landscape) {
     left: calc(50% - var(--wheel-size-landscape) / 2);
-    top: 0;
     height: 100%;
     transform: translateX(-70%);
   }
@@ -198,21 +228,23 @@
 
   position: absolute;
   z-index: var(--z-girl-decor);
+  bottom: 0;
   aspect-ratio: var(--aspect-ratio);
   user-select: none;
 
   @include bg-image('/img/decor/girl-2');
 
   @media (orientation: portrait) {
-    right: 10%;
-    bottom: 0;
-    width: min(76vw, vh(64) * var(--aspect-ratio));
-    transform: translateX(50%);
+    left: calc(50% + var(--wheel-size-portrait) * 0.1);
+    height: vh(48);
+
+    @include respond-above(small) {
+      height: vh(65);
+    }
   }
 
   @media (orientation: landscape) {
     left: calc(50% + var(--wheel-size-landscape) / 2);
-    top: 0;
     height: 100%;
     transform: translateX(-29%);
   }
@@ -229,9 +261,7 @@
   @include bg-image('/img/decor/coin');
 
   @media (orientation: portrait) {
-    left: calc(50% - var(--wheel-size-portrait) / 3);
-    width: min(24vw, vh(13) * var(--aspect-ratio));
-    transform: translate(-85%, -100%) rotate(-150deg);
+    display: none;
   }
 
   @media (orientation: landscape) {
@@ -253,9 +283,7 @@
   @include bg-image('/img/decor/coin');
 
   @media (orientation: portrait) {
-    left: calc(50% - var(--wheel-size-portrait) / 3);
-    width: min(24vw, vh(13) * var(--aspect-ratio));
-    transform: translate(-85%, -100%) rotate(-150deg);
+    display: none;
   }
 
   @media (orientation: landscape) {
@@ -276,9 +304,7 @@
   @include bg-image('/img/decor/slot');
 
   @media (orientation: portrait) {
-    left: calc(50% - var(--wheel-size-portrait) / 3);
-    width: min(24vw, vh(13) * var(--aspect-ratio));
-    transform: translate(-85%, -100%) rotate(-150deg);
+    display: none;
   }
 
   @media (orientation: landscape) {

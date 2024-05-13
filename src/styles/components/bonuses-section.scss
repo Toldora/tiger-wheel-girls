@@ -5,14 +5,23 @@
 }
 
 .bonuses-section {
+  position: relative;
+  z-index: var(--z-bonuses-section);
   display: flex;
   align-items: center;
   justify-content: center;
-  user-select: none;
+  pointer-events: none;
+
+  @media (orientation: portrait) {
+    margin-top: vh(4);
+
+    @include respond-above(small) {
+      margin-bottom: calc(vh(7) * -1);
+    }
+  }
 
   @media (orientation: landscape) {
     position: absolute;
-    z-index: var(--z-bonuses-section);
     top: 50%;
     left: 50%;
     transform: translate(-49.5%, -65%);
@@ -25,11 +34,15 @@
 
   @media (orientation: portrait) {
     @include respond-above(small) {
-      --size: #{to-rem(120)};
+      --size: #{vh(15)};
     }
 
     &:not(:last-child) {
-      margin-right: to-rem(20);
+      margin-right: calc(var(--wheel-size-portrait) * 0.25);
+
+      @include respond-above(small) {
+        margin-right: calc(var(--wheel-size-portrait) * 0.4);
+      }
     }
   }
 
