@@ -12,9 +12,9 @@
   --z-modal: 9;
   --z-wheel-btn: 5;
   --z-common-decor: 4;
-  --z-wheel: 3;
+  --z-wheel: 4;
+  --z-girl-decor: 3;
   --z-bottom-decor: 2;
-  --z-tiger-decor: 1;
   --z-default: 1;
   --z-hidden: -1;
 
@@ -73,14 +73,17 @@
   }
 
   @media (orientation: landscape) {
+    // --wheel-size-landscape: #{vh(66)};
     --wheel-size-landscape: #{min(52vw, vh(66))};
 
     @include respond-above(medium) {
-      --wheel-size-landscape: #{min(52vw, vh(63))};
+      // --wheel-size-landscape: #{vh(64)};
+      --wheel-size-landscape: #{min(55vw, vh(64))};
     }
 
     @include respond-above(xmedium) {
-      --wheel-size-landscape: #{min(46vw, vh(63))};
+      // --wheel-size-landscape: #{vh(64)};
+      --wheel-size-landscape: #{min(49vw, vh(64))};
     }
   }
 }
