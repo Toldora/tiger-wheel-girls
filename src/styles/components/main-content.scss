@@ -25,6 +25,30 @@
   }
 }
 
+.main__logo-wrapper {
+  position: absolute;
+  z-index: var(--z-logo);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: vh(8.6);
+  aspect-ratio: 6.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include bg-image('/img/decor/logo-wrapper');
+}
+
+.main__logo-link {
+  height: 50%;
+
+  svg {
+    height: 100%;
+    width: auto;
+  }
+}
+
 .main__wheel-wrapper {
   position: relative;
 }
@@ -194,41 +218,72 @@
   }
 }
 
-.main__jewelry-decor {
+.main__coin-1-decor {
+  --aspect-ratio: 0.884;
+
+  position: absolute;
+  z-index: var(--z-common-decor);
+  bottom: 7%;
+  aspect-ratio: var(--aspect-ratio);
+
+  @include bg-image('/img/decor/coin');
+
+  @media (orientation: portrait) {
+    left: calc(50% - var(--wheel-size-portrait) / 3);
+    width: min(24vw, vh(13) * var(--aspect-ratio));
+    transform: translate(-85%, -100%) rotate(-150deg);
+  }
+
+  @media (orientation: landscape) {
+    left: calc(50% - var(--wheel-size-landscape));
+    width: min(16vw, vh(30) * var(--aspect-ratio));
+    transform: translateX(-80%);
+  }
+}
+
+.main__coin-2-decor {
+  --aspect-ratio: 0.884;
+
+  position: absolute;
+  z-index: var(--z-default);
+  bottom: 18%;
+  aspect-ratio: var(--aspect-ratio);
+  filter: blur(to-rem(3));
+
+  @include bg-image('/img/decor/coin');
+
+  @media (orientation: portrait) {
+    left: calc(50% - var(--wheel-size-portrait) / 3);
+    width: min(24vw, vh(13) * var(--aspect-ratio));
+    transform: translate(-85%, -100%) rotate(-150deg);
+  }
+
+  @media (orientation: landscape) {
+    left: calc(50% + var(--wheel-size-landscape));
+    width: min(13vw, vh(21) * var(--aspect-ratio));
+    transform: rotate(255deg);
+  }
+}
+
+.main__slot-decor {
   --aspect-ratio: 1;
 
   position: absolute;
   z-index: var(--z-common-decor);
-  top: 50%;
+  bottom: 24%;
   aspect-ratio: var(--aspect-ratio);
 
-  @include bg-image('/img/decor/jewelry-decor');
+  @include bg-image('/img/decor/slot');
 
   @media (orientation: portrait) {
     left: calc(50% - var(--wheel-size-portrait) / 3);
-    width: min(24vw, var(--vh, 1vh) * 13 * var(--aspect-ratio));
-    transform: translate(-85%, -100%);
+    width: min(24vw, vh(13) * var(--aspect-ratio));
+    transform: translate(-85%, -100%) rotate(-150deg);
   }
 
   @media (orientation: landscape) {
-    left: calc(50% - var(--wheel-size-landscape) / 2);
-    width: min(13.5vw, var(--vh, 1vh) * 24 * var(--aspect-ratio));
-    transform: translate(-53%, -75%);
-  }
-}
-
-.main__orange-decor {
-  @media (orientation: landscape) {
-    --aspect-ratio: 1;
-
-    position: absolute;
-    z-index: var(--z-common-decor);
-    aspect-ratio: var(--aspect-ratio);
-    top: calc(50% + var(--wheel-size-landscape) / 3);
-    left: calc(50% - var(--wheel-size-landscape) / 3);
-    width: min(16vw, vh(24) * var(--aspect-ratio));
-    transform: translate(-55%, -45%);
-
-    @include bg-image('/img/decor/orange-decor');
+    left: calc(50% + var(--wheel-size-landscape));
+    width: min(12vw, vh(20) * var(--aspect-ratio));
+    transform: translateX(-20%);
   }
 }

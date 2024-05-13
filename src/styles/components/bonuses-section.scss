@@ -8,18 +8,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 
   @media (orientation: landscape) {
     position: absolute;
-    top: vh(15);
-    left: calc((100vw - var(--wheel-size-landscape)) / 4);
-    transform: translateX(-50%);
-    flex-direction: column;
+    z-index: var(--z-bonuses-section);
+    top: 50%;
+    left: 50%;
+    transform: translate(-49.5%, -65%);
   }
 }
 
 .bonuses-section__bonus-img {
   --size: #{to-rem(80)};
+  flex-shrink: 0;
 
   @media (orientation: portrait) {
     @include respond-above(small) {
@@ -35,7 +37,7 @@
     --size: #{vh(23)};
 
     &:not(:last-child) {
-      margin-bottom: to-rem(20);
+      margin-right: calc(var(--wheel-size-landscape) * 0.94);
     }
   }
 

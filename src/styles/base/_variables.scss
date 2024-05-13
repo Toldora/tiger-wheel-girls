@@ -10,6 +10,8 @@
   // Z-indexes
   --z-modal-overlay: 14;
   --z-modal: 9;
+  --z-logo: 5;
+  --z-bonuses-section: 5;
   --z-wheel-btn: 5;
   --z-common-decor: 4;
   --z-wheel: 4;
@@ -73,17 +75,14 @@
   }
 
   @media (orientation: landscape) {
-    // --wheel-size-landscape: #{vh(66)};
     --wheel-size-landscape: #{min(52vw, vh(66))};
 
     @include respond-above(medium) {
-      // --wheel-size-landscape: #{vh(64)};
-      --wheel-size-landscape: #{min(55vw, vh(64))};
+      --wheel-size-landscape: #{min(57vw, vh(67))};
     }
 
     @include respond-above(xmedium) {
-      // --wheel-size-landscape: #{vh(64)};
-      --wheel-size-landscape: #{min(49vw, vh(64))};
+      --wheel-size-landscape: #{min(51vw, vh(67))};
     }
   }
 }
