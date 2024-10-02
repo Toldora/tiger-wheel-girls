@@ -222,24 +222,24 @@
     transform: translateX(-70%);
   }
 
-  .qwe {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 71%;
-    aspect-ratio: 0.76;
-    background-color: rgba(var(--col-tibetan-yellow-rgb), 80%);
-    border-radius: 50%;
-    filter: blur(to-rem(75));
+  // .qwe {
+  //   content: '';
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
+  //   width: 71%;
+  //   aspect-ratio: 0.76;
+  //   background-color: rgba(var(--col-tibetan-yellow-rgb), 80%);
+  //   border-radius: 50%;
+  //   filter: blur(to-rem(75));
 
-    @include respond-above(medium) {
-      // top: -60%;
-      // left: -100%;
-      // width: to-rem(515);
-      filter: blur(to-rem(150));
-    }
-  }
+  //   @include respond-above(medium) {
+  //     // top: -60%;
+  //     // left: -100%;
+  //     // width: to-rem(515);
+  //     filter: blur(to-rem(150));
+  //   }
+  // }
 }
 
 .main__girl-2-decor {
