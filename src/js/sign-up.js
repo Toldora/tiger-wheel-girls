@@ -3,6 +3,7 @@ import { SignUpForm, compileSignUpFormMarkup, setToLS } from 'mayanbet-sdk';
 import signUpBonusesTemplate from '@/partials/sign-up-bonuses.hbs?raw';
 import { openModal } from '@/js/modal';
 import { globalState } from '@/js/global-state';
+import { REDIRECT_PARAMS } from '@/const';
 
 const modalContentRef = document.querySelector('.js-app-modal-content');
 
@@ -27,6 +28,7 @@ export const openSignUpModal = ({ isBlocked } = {}) => {
     submitCallback: async () => {
       setToLS('isAlreadyRegistered', true);
     },
+    redirectParams: REDIRECT_PARAMS,
   });
 
   openModal({ isBlocked });

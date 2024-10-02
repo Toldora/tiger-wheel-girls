@@ -10,6 +10,7 @@ import { setWheelLastStage } from '@/js/wheel';
 import { openSignUpModal } from '@/js/sign-up';
 import '@/js/terms-and-privacy';
 import useViewportSizes from '@/js/use-viewport-sizes';
+import { REDIRECT_PARAMS } from './const';
 
 useViewportSizes();
 
@@ -17,6 +18,9 @@ const searchString = queryString.parse(window.location.search);
 
 const isAlreadyRegistered = getFromLS('isAlreadyRegistered');
 if (isAlreadyRegistered && !searchString.debug) {
+  Object.entries(REDIRECT_PARAMS).forEach(([key, value]) => {
+    searchString[key] = value;
+  });
   searchString['sign-in'] = true;
   const stringifiedSearch = queryString.stringify(searchString);
 
